@@ -8,11 +8,11 @@
 import random
 
 
-def volume_of_rectangular_prism(int_base, int_height, int_width):
+def volume_of_rectangular_prism(int_length, int_width, int_height):
     # calculate area
 
     # process
-    volume = int_base * int_height * int_width
+    volume = int_length * int_width * int_height
 
     # output
     print("The volume of the rectangular prism is: {0}cm³.".format(volume))
@@ -21,20 +21,20 @@ def volume_of_rectangular_prism(int_base, int_height, int_width):
 def main():
     # input
     while True:
-        string_base = input("Enter the base (cm): ")
-        string_height = input("Enter the height (cm): ")
+        string_length = input("Enter the length (cm): ")
         string_width = input("Enter the width (cm): ")
+        string_height = input("Enter the height (cm): ")
 
         try:
-            int_base = int(string_base)
-            int_height = int(string_height)
+            int_length = int(string_length)
             int_width = int(string_width)
+            int_height = int(string_height)
 
         except ValueError:
             print("That is not a valid input. Please try again.")
 
         else:
-            volume_of_rectangular_prism(int_base, int_height, int_width)
+            volume_of_rectangular_prism(int_length, int_width, int_height)
             break
 
     print("\nDone.")
