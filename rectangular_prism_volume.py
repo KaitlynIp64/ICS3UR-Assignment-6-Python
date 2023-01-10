@@ -14,28 +14,25 @@ def volume_of_rectangular_prism(int_length, int_width, int_height):
     # process
     volume = int_length * int_width * int_height
 
-    # output
-    print("The volume of the rectangular prism is: {0}cm³.".format(volume))
+    return volume_of_rectangular_prism
 
 
 def main():
     # input
-    while True:
-        string_length = input("Enter the length (cm): ")
-        string_width = input("Enter the width (cm): ")
-        string_height = input("Enter the height (cm): ")
+    string_length = input("Enter the length of the rectangular prism (cm): ")
+    string_width = input("Enter the width of the rectangular prism (cm): ")
+    string_height = input("Enter the height of the rectangular prism (cm): ")
 
-        try:
-            int_length = int(string_length)
-            int_width = int(string_width)
-            int_height = int(string_height)
+    try:
+        int_length = int(string_length)
+        int_width = int(string_width)
+        int_height = int(string_height)
 
-        except ValueError:
-            print("That is not a valid input. Please try again.")
+        volume = volume_of_rectangular_prism(int_length, int_width, int_height)
+        print("The volume of the rectangular prism is: {0}cm³.".format(volume))
 
-        else:
-            volume_of_rectangular_prism(int_length, int_width, int_height)
-            break
+    except ValueError:
+        print("That is not a valid input.")
 
     print("\nDone.")
 
